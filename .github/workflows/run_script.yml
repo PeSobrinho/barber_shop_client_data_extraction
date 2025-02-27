@@ -2,7 +2,7 @@ name: run main script
 
 on:
   schedule:
-    - cron: '0 8 * * *'  # Rodar todos os dias às 8:00 (UTC)
+    - cron: '20 22 * * *'  # Rodar todos os dias às 19:20 (UTC-3)
 
 jobs:
   run-script:
