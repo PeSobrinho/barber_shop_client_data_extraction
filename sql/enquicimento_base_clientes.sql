@@ -14,8 +14,3 @@ update barber_shop.dw.dim_cliente
     floor(random() * 10000)::int
 		,email_ficticio = concat(lower(split_part(nm_cliente,' ',1)),'.',lower(split_part(nm_cliente,' ',2)),'@fakemail.com')
 		,instagram_ficticio = concat('@',lower(split_part(nm_cliente,' ',1)),'.',lower(split_part(nm_cliente,' ',2)))
-
-	
-	
-	select *from barber_shop.dw.dim_cliente
-
