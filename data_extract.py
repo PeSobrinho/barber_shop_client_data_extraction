@@ -1,4 +1,7 @@
-def extract_data(user, password, host, port, database): 
+def extract_data(user, password, host, port, database):
+    import psycopg2
+    from sqlalchemy import create_engine
+
     engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}')
 
     import pandas as pd
@@ -8,14 +11,10 @@ def extract_data(user, password, host, port, database):
 
     clients_data = pd.read_sql(query, engine)
 
-    print(clients_data)
-
     return clients_data
 
 if __name__ == '__main__':
 
-    import psycopg2
-    from sqlalchemy import create_engine
     import os
     from dotenv import load_dotenv
 
@@ -28,4 +27,6 @@ if __name__ == '__main__':
     database = os.getenv('DATABASE')
     schema = os.getenv('SCHEMA')
 
-    extract_data(user, password, host, port, database)
+    clients_data = extract_data(user, password, host, port, database)
+
+    print(clients_data)
