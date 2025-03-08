@@ -31,4 +31,4 @@ jobs:
         PASSWORD: ${{ secrets.PASSWORD }}
         PORT: ${{secrets.PORT}}
         DATABASE: ${{secrets.DATABASE}}
-      run: python main.py
+      run: python extract_data.py
