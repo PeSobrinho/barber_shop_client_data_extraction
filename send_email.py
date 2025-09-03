@@ -33,7 +33,7 @@ if __name__ == '__main__':
     import os
     from dotenv import load_dotenv
 
-    load_dotenv() 
+    load_dotenv()
 
     user = os.getenv('USER')
     password = os.getenv('PASSWORD')
