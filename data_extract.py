@@ -2,7 +2,7 @@ def extract_data(user, password, host, port, database):
     import psycopg2
     from sqlalchemy import create_engine
 
-    engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}')
+    engine = create_engine(f'postgresql+psycopg2://{user}:{password}@{host}:{port}/{database}?sslmode=require&channel_binding=require')
 
     import pandas as pd
 
